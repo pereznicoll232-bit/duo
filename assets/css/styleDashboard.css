@@ -1,0 +1,220 @@
+:root {
+    --primary: #A855F7; 
+    --bg-dark: #07050F;
+    --text-light: #EDE8FF;
+    --text-muted: #8875AA;
+    --font-main: 'Bebas Neue', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    cursor: none;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* ================= CURSOR ================= */
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--primary);
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9998;
+    transition: all 0.15s ease-out;
+}
+
+/* ================= NAV ================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(7,5,15,0.95), transparent);
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    font-family: var(--font-main);
+    font-size: 32px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-family: 'Barlow Condensed';
+    letter-spacing: 2px;
+}
+
+.btn-reserve {
+    border: 1.5px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+    padding: 10px 25px;
+    font-family: 'Barlow Condensed';
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-dark);
+}
+
+.hero-image-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%; 
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5; 
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 50%),
+                        linear-gradient(to top, transparent 0%, black 20%);
+    mask-image: linear-gradient(to right, transparent 0%, black 50%),
+                linear-gradient(to top, transparent 0%, black 20%);
+}
+
+.hero-overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--bg-dark) 30%, transparent 85%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10; 
+    max-width: 800px;
+}
+
+.hero-tag-container {
+    display: flex;
+    align-items: center;
+    margin-top: 260px;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.hero-tag-container::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background-color: var(--primary);
+}
+
+.hero-tag {
+    color: var(--primary);
+    font-family: 'Barlow Condensed';
+    letter-spacing: 5px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.hero-title {
+    font-family: var(--font-main);
+    font-size: clamp(80px, 12vw, 130px);
+    line-height: 0.85;
+    color: #FFF;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.hero-title .accent {
+    color: var(--primary);
+}
+
+.hero-description {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 480px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.hero-stats {
+    position: absolute;
+    right: 8%; 
+    bottom: 80px;
+    z-index: 20; 
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-number {
+    font-family: var(--font-main);
+    font-size: 52px;
+    line-height: 1;
+    color: #FFF;
+}
+
+.stat-number span {
+    color: var(--primary);
+    font-size: 32px;
+    margin-left: 2px;
+}
+
+.stat-label {
+    font-family: 'Barlow Condensed';
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #FFF;
+    text-transform: uppercase;
+}

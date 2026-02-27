@@ -1,0 +1,118 @@
+.services {
+    padding: 100px 4%;
+    background-color: var(--bg-dark);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px; 
+    margin-top: 60px;
+}
+
+.service-card {
+    background-color: #0D0A1A; 
+    padding: 60px 40px;
+    border: 1px solid rgba(168, 85, 247, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease;
+}
+
+.service-card.featured {
+    background-color: var(--primary); 
+    transform: scale(1.05); 
+    z-index: 5;
+    border: none;
+}
+
+.service-card.featured .package-name,
+.service-card.featured .price,
+.service-card.featured .package-desc,
+.service-card.featured .features li,
+.service-card.featured .tier {
+    color: var(--bg-dark); 
+}
+
+.service-card.featured .check { color: var(--bg-dark); }
+.service-card.featured .btn-service {
+    background-color: var(--bg-dark);
+    color: white;
+    border: none;
+}
+
+.tier {
+    font-family: 'Barlow Condensed';
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.package-name {
+    font-family: 'Bebas Neue';
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-family: 'Bebas Neue';
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.price sup { font-size: 28px; vertical-align: super; }
+.price sub { 
+    font-size: 16px; 
+    font-family: 'Barlow Condensed'; 
+    color: var(--text-muted); 
+}
+
+.package-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.features {
+    list-style: none;
+    margin-bottom: 40px;
+    flex-grow: 1;
+}
+
+.features li {
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.check { color: var(--primary); font-weight: bold; }
+
+.location {
+    font-family: 'Barlow Condensed';
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.btn-service {
+    padding: 15px;
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    font-family: 'Barlow Condensed';
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-service:hover {
+    background-color: var(--primary);
+    color: var(--bg-dark);
+}
